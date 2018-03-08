@@ -1,0 +1,64 @@
+#main.message-main{
+	margin:20px auto;
+	clear:both;
+}
+.message-title{
+	background:url('../imgs/message/ly_t.png') 0 0 no-repeat;
+}
+#message-content{
+	padding:50px 20px;
+}
+#message-right{
+	float:right;
+	width:700px;
+}
+.message-form-wrap{
+	display:inline-block;
+	width:100%;
+	clear:both;
+	margin-bottom:10px;
+}
+.message-form-label{
+	float:left;
+	width:130px;
+	height:35px;
+	font-size: 16px;
+	text-align: right;
+	color:#5a5a5a;
+}
+.message-form-input{
+	float:left;
+	width:450px;
+	height:33px;
+	border:1px solid #ccc;
+}
+.message-form-code{
+	width:160px;
+}
+.message-form-textarea{
+	float:left;
+	width:450px;
+	border:1px solid #ccc;
+}
+.message-form-check{
+	width:13px;
+	height:13px;
+}
+.message-form-choose{
+	font-size: 12px;
+}
+.message-form-btn{
+	width:100px;
+	height:35px;
+	margin-left:130px;
+	font-size: 16px;
+	line-height: 35px;
+	text-align: center;
+	border-radius: 5px;
+	border:none;
+	color:#fff;
+	background: #6c6c6c;
+}
+#footer{
+	margin-top: 20px;
+}

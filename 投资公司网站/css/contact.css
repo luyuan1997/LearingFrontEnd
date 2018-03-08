@@ -1,0 +1,20 @@
+#main.contact-main{
+	margin:20px auto;
+	clear:both;
+}
+.contact-title{
+	background: url('../imgs/contact/call.png') 0 0 no-repeat;
+}
+#contact-content{
+	padding:50px 20px;
+}
+#contact-left{
+	width:460px;
+}
+.contact-infor-list{
+	width:100%;
+	font-size: 14px;
+	text-align: left;
+	line-height:2.0;
+	color:#5a5a5a;
+}

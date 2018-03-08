@@ -1,0 +1,33 @@
+#main.recruitment-main{
+	margin:20px auto;
+	clear:both;
+}
+.recruitment-title{
+	background: url('../imgs/recruitment/zp_img.png') 0 0 no-repeat;
+}
+#recruitment-content{
+	margin:50px 20px;
+}
+#recruitment-right{
+	float:right;
+	width:480px;
+	padding:10px 100px;
+	background:#f5f5f5;
+}
+.jd-title{
+	width:100%;
+	font-size: 18px;
+	text-align: center;
+	color:#EA3939;
+}
+.js-list-title{
+	width:100%;
+	margin:20px 0 5px;
+	font-size: 14px;
+	color:#EA3939;
+}
+.jd-list-txt{
+	font-size: 12px;
+	line-height:1.8;
+	color:#5a5a5a;
+}

@@ -1,0 +1,276 @@
+/**
+ * 首页
+ */
+#index-wrap1{
+	width:100%;
+	height:174px;
+	clear:both;
+}
+#index-news{
+	float:left;
+	width:334px;
+	margin-right:40px;
+}
+.index-news-title{
+	display:inline-block;
+	width:100%;
+	height:30px;
+	font-size: 15px;
+	border-bottom: 2px solid #EA3939;
+	color:#EA3939;
+	background: url('../imgs/index/xw_1.png') 0 center no-repeat;
+}
+.index-news-title span{
+	display:inline-block;
+	margin:5px 0 0 20px;
+}
+.index-news-title-more{
+	float:right;
+	font-size:12px;
+	color:#5a5a5a;
+	margin:10px 5px 0 0;
+}
+.index-news-content{
+	width:100%;
+}
+.index-news-list{
+	width:100%;
+	height:20px;
+	padding:5px 0 5px 5px;
+	border-bottom: 1px dotted #ccc;
+	list-style:disc inside;
+	font-size:12px;
+	color:#5a5a5a;
+}
+.index-news-link{
+	font-size:12px;
+	color:#5a5a5a;
+}
+.index-news-link:hover{
+	color:#EA3939;
+}
+.index-news-date{
+	float:right;
+	height:100%;
+	line-height: 20px;
+}
+#index-business{
+	float:left;
+	width:334px;
+}
+.index-business-title{
+	display:inline-block;
+	width:100%;
+	height:30px;
+	font-size: 15px;
+	border-bottom: 2px solid #000;
+	color:#000;
+	background: url('../imgs/index/xw_2.png') 0 center no-repeat;
+}
+.index-business-title span{
+	display:inline-block;
+	margin:5px 0 0 20px;
+}
+.index-business-title-more{
+	float:right;
+	font-size:12px;
+	color:#5a5a5a;
+	margin:10px 5px 0 0;
+}
+.index-business-content{
+	width:100%;
+}
+.index-business-list{
+	width:100%;
+	height:20px;
+	padding:5px 0 5px 5px;
+	border-bottom: 1px dotted #ccc;
+	list-style:disc inside;
+	font-size:12px;
+	color:#5a5a5a;
+}
+.index-business-link{
+	font-size:12px;
+	color:#5a5a5a;
+}
+.index-business-link:hover{
+	color:#EA3939;
+}
+.index-business-date{
+	float:right;
+	height:100%;
+	line-height: 20px;
+}
+#index-menu{
+	float:right;
+}
+.index-menu-list{
+	float:left;
+	width:100px;
+	margin:20px 20px 0 0;
+}
+.index-menu-img{
+	width:100%;
+	height:125px;
+	display:inline-block;
+}
+.menu-img-zixun{
+	background: url('../imgs/index/sy_tz_1.jpg') center 0 no-repeat;
+}
+.menu-img-zixun:hover{
+	background: url('../imgs/index/sy_tz_1_h.jpg') center 0 no-repeat;
+}
+.menu-img-jijin{
+	background: url('../imgs/index/sy_tz_2.jpg') center 0 no-repeat;
+}
+.menu-img-jijin:hover{
+	background: url('../imgs/index/sy_tz_2_h.jpg') center 0 no-repeat;
+}
+.menu-img-touzi{
+	background: url('../imgs/index/sy_tz_3.jpg') center 0 no-repeat;
+}
+.menu-img-touzi:hover{
+	background: url('../imgs/index/sy_tz_3_h.jpg') center 0 no-repeat;
+}
+.index-menu-title{
+	display:inline-block;
+	width:100%;
+	margin-top: 5px;
+	font-size: 14px;
+	text-align:center;
+	font-weight: 600;
+	color:#EA3939;
+}
+.index-menu-title:hover{
+	color:#cc0000;
+}
+.index-menu-tips{
+	color:#826682;
+	font-size: 12px;
+	text-align: center;
+	margin-left:5px;
+	width:100%;
+}
+#index-wrap2{
+	width:100%;
+	height:320px;
+	margin-top: 20px;
+	clear:both;
+}
+.index-about{
+	float:left;
+	width:298px;
+	height:317px;
+	margin-right:10px;
+	border:1px solid #ccc;
+}
+.index-about-img{
+	display:inline-block;
+	width:100%;
+	height:135px;
+	background: url('../imgs/index/ab_t.jpg') 0 0 no-repeat;
+	position:relative;
+}
+.index-about-red{
+	display:inline-block;
+	width:39px;
+	height:66px;
+	padding:0 10px 10px 10px;
+	font-size: 18px;
+	text-align: center;
+	color:#fff;
+	background: #EA3939;
+	position:absolute;
+	top:0;
+	left:30px;
+	z-index:1;
+}
+.index-about-black{
+	display:inline-block;
+	width:59px;
+	height:30px;
+	font-size: 12px;
+	line-height: 30px;
+	text-align: center;
+	color:#fff;
+	background: #000;
+	position:absolute;
+	bottom:0;
+	left:30px;
+	z-index:1;
+}
+.index-about-info{
+	padding:20px 10px;
+	font-size: 12px;
+	line-height: 1.8;
+	color:#5a5a5a;
+}
+.index-invest{
+	float:left;
+	width:236px;
+	height:275px;
+	padding:20px;
+	background:#f1f1f1 url('../imgs/index/yw_t.png') bottom right no-repeat;
+}
+.index-invest-title{
+	width:100%;
+	font-size: 15px;
+	text-align: left;
+	color:#EA3939;
+}
+.index-invest-text{
+	font-size: 13px;
+	line-height: 30px;
+	color:#000;
+}
+.index-invest-more{
+	font-size: 12px;
+	color:#EA3939;
+}
+.index-wrap2-right{
+	float: right;
+	width: 505px;
+}
+.index-contact{
+	width: 100%;
+	height: 153px;
+	background: #f5f5f5 url('../imgs/index/call_t.png') left center no-repeat;
+}
+.index-content-info{
+	float: right;
+	width: 265px;
+	margin-top: 15px;
+}
+.index-content-list{
+	width: 100%;
+	font-size: 14px;
+	line-height: 30px;
+}
+
+.index-recruitment{
+	width: 100%;
+	height: 152px;
+	margin-top: 10px;
+	background: #f5f5f5 url('../imgs/index/zp_t.png') left center no-repeat;
+}
+
+.index-recruitment-info{
+	float: left;
+	/*width: 280px;*/
+	margin-left: 170px;
+	margin-top: 15px;
+
+}
+.index-recruitment-title{
+	font-size: 14px;
+	color: #EA3939;
+}
+.index-recruitment-txt{
+	font-size: 12px;
+	line-height: 30px;
+	color: #000;
+}
+.index-recruitment-more{
+	font-size: 12px;
+	color: #EA3939;
+}

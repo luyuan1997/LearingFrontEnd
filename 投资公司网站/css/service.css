@@ -1,0 +1,74 @@
+/**
+ * 服务内容
+ */
+#service-nav{
+	width:500px;
+	height:52px;
+	margin:50px auto;
+	background:#F1F1F1;
+}
+#service-nav-wrap{
+	margin:0 19px;
+}
+.service-nav-list{
+	float:left;
+	width:154px;
+	height:100%;
+}
+.service-nav-link{
+	display:inline-block;
+	width:100%;
+	height:100%;
+	font-size: 14px;
+	line-height: 52px;
+	text-align: center;
+	color:#000;
+}
+.service-nav-link:hover{
+	color:#fff;
+	background:#EA3939;
+}
+.service-nav-link.choose{
+	color:#fff;
+	background:#EA3939;
+}
+/**
+ * service-main
+ */
+#service-main{
+	width:100%;
+	margin-bottom:50px;
+	text-align: center;
+}
+.service-main-wrap{
+	display:inline-block;
+	margin:0 auto;
+	clear:both;
+}
+.service-mian-list{
+	float:left;
+	width:267px;
+	height:366px;
+	margin:0 47px 0 5px;
+}
+.service-main-link{
+	display:inline-block;
+	width:100%;
+	height:100%;
+	border:1px solid red;
+}
+.service-main-link:hover{
+	border:1px solid #000;
+}
+.service-main-img{
+	width:237px;
+	height:320px;
+	margin:10px 15px 5px;
+}
+.service-main-title{
+	width:100%;
+	font-size: 14px;
+	font-weight: 600;
+	text-align: center;
+	color:#000;
+}
