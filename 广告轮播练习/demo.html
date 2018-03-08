@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>广告轮播练习</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		ul{
+			list-style:none;
+		}
+		a{
+			text-decoration: none;
+		}
+		p{
+			font-size: 12px;
+		}
+		#advertise{
+			height:400px;
+			width:610px;
+			margin-top: 20px;
+		}
+		#title{
+			width:100%;
+			height:30px;
+			background: #f6f5f5;
+		}
+		#title li a{
+			height:20px;
+			float:left;
+			font-size: 12px;
+			margin-left: 15px;
+			color:#669;
+			line-height:20px;
+			margin-top: 5px;
+		}
+		#title .select{
+			background: #fff;
+		}
+		#advertise-list ul{
+			font-size:13px;
+			color:#669;
+			display:none;
+		}
+		.img{
+			float:left;
+			margin-top: 20px;
+		}
+		.detail{
+			height:80px;
+			width:210px;
+			float:right;
+			margin-top: 20px;
+			margin-right: 10px;
+		}
+		#advertise-list .item{
+			width:300px;
+			height:100px;
+			float:left;
+			margin-top: 10px;
+			margin-left: 3px;
+			border-bottom: 1px dotted #ccc;
+		}
+		#advertise-list .hide{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div id="advertise">
+		<ul id="title">
+			<li><a href="#">生活</a></li>
+			<li><a href="#">兴趣</a></li>
+			<li><a href="#">文化艺术</a></li>
+			<li><a href="#">音乐电影</a></li>
+			<li><a href="#">本地</a></li>
+			<li><a href="#">其他</a></li>
+		</ul>
+		<div id="advertise-list">
+			<ul class="hide" id="advertise-list1">
+				<li id="item1" class="item">
+					<div class="img">
+						<img src="imgs/g12238-2.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item2" class="item">
+					<div class="img">
+						<img src="imgs/g131612-4.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item3" class="item">
+					<div class="img">
+						<img src="imgs/g12247-1.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item4" class="item">
+					<div class="img">
+						<img src="imgs/g14153-10.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item5" class="item">
+					<div class="img">
+						<img src="imgs/g20324-5.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item6" class="item">
+					<div class="img">
+						<img src="imgs/g35813-1.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+			</ul>
+			<ul id="advertise-list2">
+				<li id="item1" class="item">
+					<div class="img">
+						<img src="imgs/g44725-1.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item2" class="item">
+					<div class="img">
+						<img src="imgs/g58422-9.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item3" class="item">
+					<div class="img">
+						<img src="imgs/g61581-1.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item4" class="item">
+					<div class="img">
+						<img src="imgs/g69947-4.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item5" class="item">
+					<div class="img">
+						<img src="imgs/g71386-5.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item6" class="item">
+					<div class="img">
+						<img src="imgs/g71879-1.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+			</ul>
+			<ul  id="advertise-list3">
+				<li id="item1" class="item">
+					<div class="img">
+						<img src="imgs/g77374-2.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item2" class="item">
+					<div class="img">
+						<img src="imgs/g85862-1.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item3" class="item">
+					<div class="img">
+						<img src="imgs/g99630-1.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item4" class="item">
+					<div class="img">
+						<img src="imgs/g111124-3.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item5" class="item">
+					<div class="img">
+						<img src="imgs/g118474-1.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item6" class="item">
+					<div class="img">
+						<img src="imgs/g142641-1.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+			</ul>
+
+			<ul  id="advertise-list4">
+				<li id="item1" class="item">
+					<div class="img">
+						<img src="imgs/g147604-45.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item2" class="item">
+					<div class="img">
+						<img src="imgs/g166185-3.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item3" class="item">
+					<div class="img">
+						<img src="imgs/g198988-9.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item4" class="item">
+					<div class="img">
+						<img src="imgs/g199108-3.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item5" class="item">
+					<div class="img">
+						<img src="imgs/g200545-1.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item6" class="item">
+					<div class="img">
+						<img src="imgs/g201001-7.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+			</ul>
+
+			<ul  id="advertise-list5">
+				<li id="item1" class="item">
+					<div class="img">
+						<img src="imgs/g205089-1.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item2" class="item">
+					<div class="img">
+						<img src="imgs/g205665-1.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item3" class="item">
+					<div class="img">
+						<img src="imgs/g209998-4.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	            		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item4" class="item">
+					<div class="img">
+						<img src="imgs/g225599-3.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item5" class="item">
+					<div class="img">
+						<img src="imgs/g232039-6.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item6" class="item">
+					<div class="img">
+						<img src="imgs/g256167-5.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+			</ul>
+
+			<ul  id="advertise-list6">
+				<li id="item1" class="item">
+					<div class="img">
+						<img src="imgs/g270078-1.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item2" class="item">
+					<div class="img">
+						<img src="imgs/g320386-4.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item3" class="item">
+					<div class="img">
+						<img src="imgs/g324211-1.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item4" class="item">
+					<div class="img">
+						<img src="imgs/g344822-6.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item5" class="item">
+					<div class="img">
+						<img src="imgs/g361153-1.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+				<li id="item6" class="item">
+					<div class="img">
+						<img src="imgs/g111124-3.jpg">
+					</div>
+					<div class="detail">
+						<a href="http://www.douban.com/group/frenchlifestyle/">法兰西情结: 
+	             		美酒，美食，...</a>(177)
+	             		<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src="jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#title li').on('click',function(){
+				var ind=$(this).index();
+				$(this).siblings().children('a').removeClass('select');
+				$(this).children('a').addClass('select');
+				$('#advertise-list').children('ul:eq('+ind+')').addClass('hide')
+				.siblings('ul').removeClass('hide');
+			});
+			var i=0;
+			setInterval(function(){
+				$('#title li:eq('+i+')').trigger('click');
+				if (i == $('#title li').length)
+					i=0;
+				else i++;
+			},2000);
+		});
+	</script>
+</body>
+</html>
