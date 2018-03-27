@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>处理各种类型的表单</title>
+	<meta charset="utf-8">
+	<style>
+		#pwdLvSpan{
+			display:inline-block;
+			width:100px;
+			height:5px;
+			background:#c3c3c3;
+		}
+		#pwdLvSpan i{
+			display: block;
+			background:green;
+			height:5px;
+			width:0;
+		}
+	</style>
+</head>
+<body>
+	<!-- <form action="" method="post">
+		账户：<input type="text" name="" id="userid"/><br /><br />
+		密码：<input type="password" name="" id="userpwd" /><br /><br />
+		确认：<input type="password" name="" id="userpwd2" /><br /><br />
+		<input type="submit" value="注册" onclick="return eg.regCheck();"/>
+	</form> -->
+	<form action="" method="post" onsubmit="return eg.regCheck();">
+		<input type="hidden" name="" id="errnum" value="0" />
+		账户：<input type="text" name="" id="userid"/><br /><br />
+		密码：<input type="password" name="" id="userpwd" />密码强度<span id="pwdLvSpan"><i id="pwdLv"></i></span><br /><br />
+		确认：<input type="password" name="" id="userpwd2" /><br /><br />
+		性别：<input type="radio" name="sex" value="1" checked="checked"/>男 <input type="radio" name="sex" value="0"/>女 <br /> <br />
+		年龄：<select name="" id="age">
+			<option value="0" selected = "selected">选择年龄段</option>
+			<option value="1">18岁以下</option>
+			<option value="2">18-24岁</option>
+			<option value="3">24-30岁</option>
+			<option value="4">30-35岁</option>
+			<option value="5">35岁以上</option>
+		</select><br /> <br />
+		爱好：<input type="checkbox" name="like" value="1" class="like" />
+		上网<input type="checkbox" name="like" value="2" class="like" />逛街<input type="checkbox" name="like" value="3" class="like" />看电影<input type="checkbox" name="like" value="4" class="like" />其他<br /> <br />
+		简介：<textarea name="" id="about" cols="18" rows="4"></textarea><br /><br />
+		邮箱：<input type="text" name="" id="email" /><br /><br />
+		<input type="submit" value="注册" id="regBtn" />
+		<input type="button" value="解锁" onclick="eg.unlock()" style="display:none;" id="regUnclock" />
+	</form>
+	<script>
+		var eg = {};
+		// 声明一个对象，当做命名空间来使用；
+		// IE6不能使用getElementByTagName，所以需要自己定义，满足浏览器的兼容性,因此定义一个公共函数来获取制定class名称的元素集合
+		eg.getElementByTagName = function(className,element){
+			if (document.getElementByClassName){
+				return (element||document).getElementByClassName(className);
+			}
+			var children = (element||document).getElementByTagName('*');
+			// 使用通配符
+			var elements = new Array();
+			for(var i=0; i<children.length; i++){
+				var child = children[i];
+				var classNames = child.className.split(' ');
+				// 分割多个class样式
+				for(var j=0; j<classNames.length; j++){
+					if(classNames[j] == className){
+						elements.push(child);
+						break;
+					}
+				}
+			}
+			return elements;
+		};
+		// 定义一个公共函数来解决事件监听的兼容问题
+		eg.addListener = function(target,type,handler){
+			if(target.addEventListener){
+				target.addEventListener(type,handler,false);
+			} else if(target.attachEvent){
+				target.attachEvent("on"+type,handler);
+			} else{
+				target["on"+type] = handler;
+			}
+		};
+		// 定义一个公共函数获取制定的id元素，减少代码量，提高代码复用率
+		eg.$ = function(id){
+			return document.getElementById(id);
+		};
+		eg.regCheck = function(){
+			var uid = eg.$("userid");
+			var upwd = eg.$("userpwd");
+			var upwd2 = eg.$("userpwd2");
+			if (uid.value == ''){
+				alert('账户不能为空！');
+				uid.focus();
+				// 让输入框获得焦点
+				eg.err();
+				return false;
+				// 返回false就会阻止表单form提交
+			}
+			if (upwd.value == ''){
+				alert('密码不能为空！');
+				upwd.focus();
+				eg.err();
+				return false;
+			}
+			if (upwd.value != upwd2.value){
+				alert('两次密码不能不相同！');
+				upwd.focus();
+				eg.err();
+				return false;
+			}
+			var about = eg.$("about");
+			if (about.value.length > 60){
+				alert("简介数字不得超过60字!");
+				about.focus();
+				eg.err();
+				return false;
+			}
+			var age = eg.$("age");
+			if (age.value == "0"){
+				alert("请选择合适的年龄段！");
+				age.focus();
+				eg.err();
+				return false;
+			}
+			var likes = eg.getElementByClassName("like");
+			var likeNum = 0;
+			for (var n=0; n < likes.length; n++){
+				console.log(likes[n].checked);
+				if (likes[n].checked){
+					likeNum++;
+				}
+			}
+			if (likeNum == 0){
+				alert("请选择自己的兴趣爱好！");
+				eg.err();
+				return false;
+			}
+			var email = eg.$("email");
+			if(!/^[A-Za-z\d]+[A-Za-z\d\-_\.]*@([A-Za-z\d]+[A-Za-z\d\-]*\.)+[A-Za-z]{2,4}$/.test(email.value)){
+				alert('请输入正确的邮箱！');
+				email.focus();
+				eg.err();
+				return false;
+			}
+			// 其中，正则表达部分也可以使用：
+			// if(!new RegExp("^[a-z\\d]+[\\w\\-\.]*@([a-z\\d]+[a-z\\d\\-]*\.)+[A-Za-z]{2,4}$","i").test(email.value))
+			// ^[A-Za-z\d]+和[a-z\\d]+是以字母或者数字开头；
+			// [A-Za-z\d\-_\.]*和[\\w\\-\.]*是允许字母、数字、下划线、中横线和点出现0此以上
+			// ([A-Za-z\d]+[A-Za-z\d\-]*\.)+和([a-z\\d]+[a-z\\d\\-]*\.)+是以字母开头接着只允许字母、数字、中横线和点为一组，可以出现1次以上，即匹配域名163.com中的163.这部分;
+			// [A-Za-z]{2,4}$是以字母结尾长度2~4个字母。
+			return true; 
+			// 返回true就会提交表单form
+		};
+		// 添加一些交互事件
+		eg.addEvent = function(){
+			var pwd=eg.$("userpwd");
+			eg.addEventListener(pwd,"keyup",function(){
+				var lv = 0;
+				if(/^\d{4,}$/.test(pwd.value)){
+					lv=10;
+				} else if(/^\w{4,}$/.test(pwd.value)){
+					lv = 25;
+				} else if(/^[\d\w]{4,}$/.test(pwd.value)){
+					lv = 50;
+				} else if(/^[\d\w~!@#$%\^&*\(\)\-{}\[\]=<>,\.\?\/]{4,}.test(pwd.value)){
+					lv = 100;
+				} else if(pwd.value.length <6 && pwd.value.lenght >3){
+					lv =60;
+				} else if(pwd.value.length <4){
+					lv =0;
+				}
+				eg.$("pwdLv").style.width = lv +"px";
+			});
+		}
+		// 在用户单击"注册"按钮前就要运行起来，所以定义好就立刻调用
+		eg.addEvent();
+		// 出错时记录错误的次数
+		eg.err = function(){
+			var el = eg.$("errnum");
+			var old = el.value;
+			el.value = parseInt(old)+1;
+			eg.lock();
+			// 把字符串转换为整数+1，并保存在value值内，用来检验是否需要进行锁定
+		};
+		eg.lock = function(){
+			var err = eg.$("errnum");
+			if (parseInt(err.value) > 2){
+				eg.$("regBtn").disabled = true;
+				eg.$("regUnclock").style.display = "block";
+				// 根据要求，密码输错3次进行锁定，并显示解锁按钮;
+			}
+		};
+		eg.unlock = function(){
+			eg.$("regBtn").disabled = false;
+			eg.$("regUnclock").style.display = "none";
+
+		};
+	</script>
+</body>
+</html>
