@@ -49,8 +49,8 @@
 	<script>
 		var eg = {};
 		// 声明一个对象，当做命名空间来使用；
-		// IE6不能使用getElementByTagName，所以需要自己定义，满足浏览器的兼容性,因此定义一个公共函数来获取制定class名称的元素集合
-		eg.getElementByTagName = function(className,element){
+		// IE6不能使用getElementByClassName，所以需要自己定义，满足浏览器的兼容性,因此定义一个公共函数来获取制定class名称的元素集合
+		eg.getElementByClassName = function(className,element){
 			if (document.getElementByClassName){
 				return (element||document).getElementByClassName(className);
 			}
