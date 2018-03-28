@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>用JavaScript实现照片显示功能</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		ul,li{list-style: none;}
+		#smallPhotos{width:620px;margin:10px 0;}
+		#smallPhotosList{margin:0 auto;width:580px;float:left;padding:0;height:100px;}
+		
+		#smallPhotosList li{
+			height:100px;
+			float:left;
+			margin-left:10px;
+			_margin-left:8px;/*针对IE6间隙太大设置*/
+		}
+		#smallPhotosList img{border:2px solid #000;cursor:pointer;}
+		#prve{
+			height:40px;
+			width:20px;
+			display:inline-block;
+			float:left;
+			cursor: pointer;
+		}
+		#next{
+			height:40px;
+			width:20px;
+			display:inline-block;
+			float:right;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="bigPhoto">
+		<img src="photo1.jpg" id="bigPhotoSrc" alt="" width="620" height="450" border="0">
+	</div>
+	<div id="smallPhotos">
+		<span id="prve">&lt;</span>
+		<ul id="smallPhotosList"></ul>
+		<span id="next">&gt;</span>
+	</div>
+	<script type="text/javascript">
+		var eg = {};
+		// 声明一个对象，当做命名空间来使用；
+		// IE6不能使用getElementByClassName，所以需要自己定义，满足浏览器的兼容性,因此定义一个公共函数来获取制定class名称的元素集合
+		eg.getElementByClassName = function(className,element){
+			if (document.getElementByClassName){
+				return (element||document).getElementByClassName(className);
+			}
+			var children = (element||document).getElementByTagName('*');
+			// 使用通配符
+			var elements = new Array();
+			for(var i=0; i<children.length; i++){
+				var child = children[i];
+				var classNames = child.className.split(' ');
+				// 分割多个class样式
+				for(var j=0; j<classNames.length; j++){
+					if(classNames[j] == className){
+						elements.push(child);
+						break;
+					}
+				}
+			}
+			return elements;
+		};
+		// 定义一个公共函数来解决事件监听的兼容问题
+		eg.addListener = function(target,type,handler){
+			if(target.addEventListener){
+				target.addEventListener(type,handler,false);
+			} else if(target.attachEvent){
+				target.attachEvent("on"+type,handler);
+			} else{
+				target["on"+type] = handler;
+			}
+		};
+		// 定义一个公共函数获取制定的id元素，减少代码量，提高代码复用率
+		eg.$ = function(id){
+			return document.getElementById(id);
+		};
+		//定义数据
+		eg.data = [
+			["photo1.jpg","thumb1.jpg"],
+			["photo2.jpg","thumb2.jpg"],
+			["photo3.jpg","thumb3.jpg"],
+			["photo4.jpg","thumb4.jpg"],
+			["photo5.jpg","thumb5.jpg"],
+			["photo6.jpg","thumb6.jpg"],
+			["photo7.jpg","thumb7.jpg"],
+			["photo8.jpg","thumb8.jpg"],
+			["photo1.jpg","thumb1.jpg"],
+			["photo2.jpg","thumb2.jpg"],
+			["photo3.jpg","thumb3.jpg"],
+			["photo4.jpg","thumb4.jpg"],
+			["photo5.jpg","thumb5.jpg"],
+			["photo6.jpg","thumb6.jpg"],
+			["photo7.jpg","thumb7.jpg"],
+			["photo8.jpg","thumb8.jpg"]
+		];
+		eg.showNumber = 0;//默认显示
+		eg.groupNumber = 1;//当前显示的组
+		eg.groupSize = 6;//每组的数量
+		
+		eg.showThumb = function(group){//主要功能是生成制定某一组的几幅照片
+			var ul = eg.$("smallPhotosList");
+			ul.innerHTML = '';//每次显示时，清除旧的内容
+			var start = (group-1)*eg.groupSize;//计算需要的data数据的开始位置
+			var end = group*eg.groupSize;//计算需要的data数据的结束位置
+			for (var i=start; (i <end && i < eg.data.length); i++){
+				//循环数据，并根据数据生成的HTML后插入小图列表里
+				var li = document.createElement("li");
+				li.innerHTML = '<img src="'+eg.data[i][1]+'" id="thumb'+i+'" width="80" height="40"/>';
+				(function(i){
+					eg.addListener(li,"click",function(){
+						// 增加click事件监听
+						eg.showNumber = i;
+						// 记录选中的图标序号，供其他函数调用
+						eg.showBig();
+					});
+				})(i);
+				ul.appendChild(li);//追加元素
+			}
+		};
+		eg.showBig = function(){
+			eg.$("bigPhotoSrc").src = eg.$("thumb"+eg.showNumber).src.replace("thumb","photo");
+		};
+		eg.init = function(){
+			eg.showThumb(1);//初始化要显示的，初始化第一组图片，并能够让鼠标单击小图而显示大图
+			eg.addListener(eg.$("next"),"click",function(){
+				eg.nextThumb();//鼠标点击上一组图标，显示下一组小图列表
+			});
+			eg.addListener(eg.$("prve"),"click",function(){
+				eg.prveThumb();//鼠标点击下一组图标，显示上一组小图列表
+			});
+			eg.addListener(document,"keyup",function(e){
+				e = e||event;
+				if (e.keyCode == 37){
+					eg.prvePhoto();
+				}
+				if(e.keyCode == 39){
+					eg.nextPhoto();
+				}
+			});
+		};
+		eg.nextPhoto = function(){
+			if(eg.showNumber%eg.groupSize == (eg.groupSize-1)){
+				eg.nextThumb();
+			} else if(eg.showNumber < eg.data.length-1){
+				eg.showNumber++;
+				eg.showBig();
+			}
+		};
+		eg.prvePhoto = function(){
+			if(eg.showNumber == (eg.groupNumber-1)*eg.groupSize){
+				eg.prveThumb();
+			} else if(eg.showNumber > 0){
+				eg.showNumber--;
+				eg.showBig();
+			}
+		};
+		eg.init();
+		eg.nextThumb = function(){//展示下一组小图标列表
+			if ((eg.groupNumber*eg.groupSize)+1 <= eg.data.length){
+				eg.showThumb(eg.groupNumber+1);
+				eg.showNumber = eg.groupNumber*eg.groupSize;
+				eg.showBig();
+				eg.showNumber++;
+			}
+		};
+		eg.prveThumb = function(){//显示上一组小图标
+			if (eg.groupNumber-1 >= 1){
+				eg.showNumber--;
+				eg.showNumber = eg.groupNumber*eg.groupSize-eg.groupSize;
+				eg.showBig();
+			}
+		};
+	</script>
+</body>
+</html>
