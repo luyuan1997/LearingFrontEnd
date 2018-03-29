@@ -1,0 +1,46 @@
+#news{
+	height:500px;
+	width:1100px;
+	margin:0 auto;
+	padding-top: 50px;
+}
+.news-title{
+	height:40px;
+	width:500px;
+	margin:0 auto;
+}
+.news-title a{
+	font:16px 宋体;
+}
+.news-title h3{
+	float:left;
+	margin-left:50px;
+	text-align: center;
+	line-height: 30px;
+	width:100px;
+	height:30px;
+}
+.news-title h3 a{
+	color:black;
+}
+.news-title h3 a:hover{
+	border-radius:10px;
+	background: green;
+}
+.news-list{
+	list-style-type: square;
+	height:400px;
+	width:100%;
+	line-height: 30px
+}
+.date{
+	display:block;
+	float:right;
+}
+.news-list li{
+	border-bottom: 1px dotted #000;
+}
+.news-list a{
+	color:black;
+	font-size:13px;
+}

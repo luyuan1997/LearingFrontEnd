@@ -1,0 +1,50 @@
+/**********course开始**********/
+#course{
+	width:1100px;
+	height:800px;
+	margin:30px auto;
+}
+#course-list .course-style{
+	width:500px;
+	height:30px;
+	margin:0 auto;
+	text-align: center;
+}
+.course-style li{
+	float:left;
+	margin-left:50px;
+	line-height: 30px;
+}
+.course-style li a{
+	display:block;
+	width:100px;
+	height:30px;
+	color:black;
+}
+.course.style li a:hover{
+	background: green;
+	color:white;
+	border-radius: 8px;
+}
+.course-image{
+	width:1100px;
+	height:600px;
+}
+.course-image li{
+	float:left;
+	text-align: center;
+}
+.course-image li h4{
+	padding-left:40px;
+}
+.course-image li img{
+	width:200px;
+	height:275px;
+	margin-left:50px;
+	margin-top:40px;
+	border:6px solid #ccc;
+}
+.course-image li img:hover{
+	border:6px solid red;
+}
+/**********course结束**********/

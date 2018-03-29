@@ -1,0 +1,230 @@
+/****news开始****/
+#news{
+	height: 195px;
+}
+#trends{
+	width: 740px;
+	float: left;
+	margin-top: 20px;
+}
+#notice{
+	width:400px;
+	float:right;
+	margin-top:20px;
+}
+.title{
+	float:left;
+}
+.more{
+	float:right;
+	height:30px;
+	width:100px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 15px;
+}
+.more:hover{
+	background:orange;
+}
+#trends .trends-list{
+	clear:both;
+}
+.news-item{
+	float:left;
+	width:295px;
+	height:30px;
+	background: url(../image/home-bg1.png) no-repeat 0% 50%;
+	text-indent: 15px;
+	line-height: 25px;
+}
+.news-item a{
+	color:black;
+	font-size:12px;
+}
+#notice-list{
+	border:1px dotted black;
+	height:92px;
+	clear:both;
+}
+#notice-list .news-item{
+	width:400px;
+	text-align: center;
+}
+/*****news结束*****/
+/*****course开始*****/
+#course{
+	height:500px;
+	background: rgb(245,245,245);
+	text-align: center;
+}
+.hot-course-title{
+	padding-top:30px;
+}
+.hot-course-title-English{
+	padding-top:10px;
+}
+#hot-course-list{
+	width:1000px;
+	height:300px;
+	margin:100px auto;
+}
+#course ul li{
+	float:left;
+}
+#course ul a{
+	color:black;
+	font-size:12px;
+	display:block;
+}
+/*****course结束*****/
+/*****solgan开始*****/
+#slogan{
+	height:414px;
+	background: rgb(147,196,125);
+	text-align: center;
+}
+#description{
+	height:31px;
+	width:180px;
+	margin:0 auto;
+	padding-top:30px;
+	font-size: 12px;
+}
+.des{
+	width:90px;
+	height:100%;
+	background: white;
+	display:block;
+	color:black;
+	float:left;
+	line-height:31px;
+}
+.description-two{
+	color:white;
+	background:orange;
+}
+.slogan-title{
+	color:white;
+	font-family: Tahoma,Verdana,Arial,宋体;
+	margin-top:40px;
+}
+.goal{
+	color:white;
+	font:bold 12px Tahoma;
+	margin-top:20px;
+}
+.detail-description{
+	margin:0 auto;
+	width:470px;
+	height:100px;
+	font:12px Tahoma;
+	color:white;
+	margin-top:20px;
+	line-height:30px;
+	border-top:1px solid white;
+	padding-top:10px;
+}
+.know-us{
+	display:block;
+	color:white;
+	height:24px;
+	width:100px;
+	border:1px solid white;
+	border-radius:5px;
+	margin:0 auto;
+}
+.know-us:hover{
+	background:white;
+	color:black;
+}
+/*****solgan结束*****/
+/*****question开始*****/
+#question{
+	height:400px;
+	background: #FEE157;
+}
+#question-audition{
+	width:1100px;
+	margin:0 auto;
+}
+#question-content{
+	width:650px;
+	float:left;
+	margin-top:50px;
+}
+#audition{
+	width:335px;
+	float:right;
+	text-align: center;
+	margin-top:50px;
+}
+#question .common-question{
+	float:left;
+}
+#question .more-question{
+	float:right;
+	font:12px/1.8 Tahoma,Verdana,Arial,宋体;
+	width:100px;
+	height:25px;
+	border-radius:10px;
+	line-height: 25px;
+	text-align: center;
+}
+#question .more-question a{
+	color:black;
+}
+#question .more-question:hover{
+	background:white;
+}
+.question-list{
+	margin-top: 50px;
+	border:1px dotted #999;
+	padding:20px;
+}
+.question-font{
+	color:black;
+	font:15px/1.8 Tahoma,Verdana,Arial,宋体;
+}
+#question .questionlist{
+	width:600px;
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	background:url(../image/Problem-bg.png) no-repeat 0% 50%;
+	text-indent:10px;
+	border-bottom: 1px dotted #999;
+	line-height: 35px;
+}
+#selfinfo{
+	border:1px dotted #999;
+	margin-top:25px;
+}
+#selfinfo .info-input{
+	width:250px;
+	height:25px;
+	border:1px dotted #999;
+}
+#selfinfo .info-text{
+	margin-top:10px;
+}
+.click-change{
+	font-size:12px;
+	color:black;
+}
+.info-check{
+	height:25px;
+	width:100px;
+}
+#reset-submit{
+	margin:15px auto;
+}
+#reset-submit .re-su{
+	display:inline-block;
+	width:100px;
+	height:25px;
+	background:#666;
+}
+.info-star{
+	color:red;
+}
+/*****question结束*****/

@@ -1,0 +1,242 @@
+/********about-us开始**********/
+#about-us{
+	height: 450px;
+	background: rgb(245,245,245);
+}
+.who-us{
+	display: block;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	padding-top: 40px;
+}
+#info-us{
+	width: 1100px;
+	margin: 0 auto;
+	position: relative;
+}
+.edu-description{
+	width:700px;
+	float:left;
+}
+.who-edu{
+	font-family:宋体;
+	padding:10px 0;
+	color:rgb(106,168,79);
+}
+.happy-learning{
+	color:rgb(253,226,236);
+}
+.mutual-learning{
+	color:rgb(109,158,236);
+}
+.description{
+	font:13px 宋体;
+	line-height: 20px;
+	padding-bottom: 10px;
+}
+.edu-word{
+	width: 550px;
+	height: 100%;
+	float: right;
+	line-height: 25px;	
+}
+.edu-img{
+	height: 360px;
+	width: 235px;
+	display: block;
+	float: right;
+}
+
+/********about-us结束**********/
+/********know-us开始***********/
+#know-us{
+	height:200px;
+	width:100%;
+	background:rgb(109,158,235);
+	position:relative;
+}
+.know-word{
+	height: 250px;
+	width: 600px;
+	position: absolute;
+	left:375px; 
+	top:25px;
+	color: white;
+}
+.know-title,.know-sub{
+	font: 35px 宋体 ;
+	text-align: center;
+}
+.know.sub{
+	text-align: center;
+	font-size: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+#know-us-content{
+	padding-top: 20px;
+	border-top: 1px solid white;
+	font-size: 15px;
+}
+/**********know-us结束**********/
+
+/**********learning-goal开始****/
+#learning-goal{
+	height:600px;
+	width:100%;
+	position:relative;
+	bottom:0px;
+	background: rgb(245,245,245);
+}
+#goal-course{
+	height:480px;
+	width:1100px;
+	position:absolute;
+	top:30px;
+	left:125px;
+}
+#goal{
+	height:100%;
+	width:620px;
+	float:left;
+	
+	text-align: center;
+}
+#free-course{
+	margin-top:80px;
+	height:100%;
+	width:340px;
+	float:right;
+	text-align: center;
+	line-height: 30px;
+
+}
+#goal img{
+	margin:0 37px;
+}
+#goal li{
+	width:120px;
+	height:250px;
+	float:left;
+	padding:0 43px;
+	background: url(../image/about-Article.jpg) no-repeat scroll 100% 100%;
+}
+#goal li h3{
+	font-family: 宋体;
+	padding-top: 10px;
+	padding-bottom: 15px;
+}
+#goal li p{
+	font-size:13px;
+	padding-top: 20px;
+}
+
+#selfinfo{
+	border:1px dotted rgb(246,178,107);
+	margin-top:25px;
+}
+#selfinfo .info-input{
+	width:250px;
+	height:25px;
+	border:1px dotted #999;
+}
+#selfinfo .info-text{
+	margin-top: 10px;
+}
+.click-change{
+	font-size:12px;
+	color:black;
+}
+.info-check{
+	height:25px;
+	width:100px;
+}
+#reset-submit{
+	margin:15px auto;
+}
+#reset-submit .re-su{
+	display:inline-block;
+	width:100px;
+	height:25px;
+	background:#666;
+	color:white;
+}
+.info-star{
+	color:red;
+}
+/********learning-goal结束*****/
+
+/********advantage开始*********/
+#advantage{
+	height:550px;
+	width:100%;
+	background:rgb(147,196,125);
+	color:white;
+}
+#us-other{
+	width:1100px;
+	height:500px;
+	margin:0 auto;
+	padding-top: 10px;
+}
+.adv-us,.other-company{
+	width:400px;
+	height:100%;
+	float:left;
+	text-indent:20px;
+}
+#us-other ul{
+	width:400px;
+	height:400px;
+	background: red;
+	background: url(../image/index_in_9c75.png) no-repeat left center;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+#us-other li{
+	line-height: 58px;
+}
+#us-other h4{
+	margin-top: 40px;
+	text-align: center;
+}
+.other-company{
+	float:right;
+}
+.pk{
+	width:100px;
+	height:100px;
+	text-align: center;
+	line-height:100px;
+	font:white 100px;
+	padding-top:150px;
+	margin:0 auto;
+	font-size:50px;
+}
+/************advantage结束******/
+
+/*********footer开始************/
+#footer{
+	height:130px;
+	background:#414B4A;
+}
+#footer-content{
+	width:1100px;
+	height:100%;
+	color:white;
+	margin:0 auto;
+	padding-top:13px;
+	line-height: 40px;
+	text-align: center;
+}
+#footer .footer-menu-list{
+	float:left;
+	padding-left:20px;
+}
+#footer-content p{
+	clear:both;
+}
+#footer-menu{
+	margin-left:340px;
+}
