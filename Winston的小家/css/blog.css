@@ -2,17 +2,27 @@
 a:link, a:visited{text-decoration: none;}
 body{
 	font:14px "微软雅黑",Arial Helvetica, sans-serif;
-	background: #D0ECF8 url(../img/bg_blog1.jpg) 50% 0 scroll no-repeat;
+	background: #D0ECF8 url(../img/bg.png) scroll 100% 100% /cover;
 	color:#5d5d5d;
 }
-figure{
+.left{float:left;}
+.right{float:right;}
+aside{width:300px;}
+footer{
+	text-align: center;
+	line-height: 40px;
+	border-top:#E8E8E8 1px solid;
+	width:1000px;
+	margin:auto;
+}
+.top{
 	width:100%;
 	clear:both;
 	height:28px;
 	position:fixed;
 	z-index:9999;
 }
-figure p{
+.top p{
 	width:100%;
 	margin:12px auto;
 	color:#fff;
@@ -38,6 +48,8 @@ figure p{
 }
 header{
 	background:rgba(93,93,93,0.5);
+	width:100%;
+	margin:auto;
 }
 #topnav{
 	width:100%;
@@ -83,10 +95,16 @@ nav ul li a{color:#fff;}
 	width:100%;
 	overflow: hidden;
 }
+.box{
+	width:1200px;
+	margin:auto;
+	overflow:hidden;
+}
 .texts{
 	width:350px;
+	position:absolute;
 	line-height: 26px;
-	margin:40px 0 0 40px;
+	margin:20px 0 0 20px;
 	float:left;
 	font-size:14px;
 }
@@ -327,23 +345,59 @@ opacity:1;
 	transition:margin-top 0.2s ease-in-out;
 }
 .avatar a:hover span{display:block;margin-top: 0;}
-.blog{
-	width:720px;
-	float:left;
-	padding-left: 80px;
+article{
+	width:1200px;
+	margin:20px auto;
+	overflow:hidden;
 }
-.blog h2{
+.title_tj{
 	font:18px "宋体",Arial, Helvetica, sans-serif;
 	color:#444;
 	font-weight: bold;
 	background: url(../img/h_line.jpg) repeat-x 20px center;
 }
-.blog h2 span{color:#FE5187;}
+.title_tj span{color:#FE5187;}
 .bloglist{
-	width:740px;
+	width:890px;
 	overflow: hidden;
-	background: rgba(93,93,93,0.5) url(../img/r_line.jpg) repeat-y right;
+	background:url(../img/r_line.jpg) repeat-y right;
 }
-.bloglist h3{margin:20px 0 10px 0;color:#333;}
-.bloglist h3 a{font:14px "宋体",Arial, Helvetica, sans-serif;color:#000;}
-.nan{background: url(../img/nan.jpg);background-size: 130px 130px;}
+
+.bloglist figure{width:183px;float:left;}
+.bloglist figure img{padding:4px;border:#f4f2f2 1px solid;width:175px;}
+.bloglist h3{margin:20px 0 10px 0;color:#333;font-size:bold;}
+.bloglist ul{
+	float:left;
+	width:520px;
+	margin:10px 0 0 10px;
+	line-height:20px;
+}
+.bloglist h3 a{font:14px "宋体",Arial, Helvetica, sans-serif;color:#333;}
+.dateview { width: 695px; overflow: hidden; clear: both; margin: 10px 0 0 0; display: inline-block; background: #f6f6f6 url(../img/time.jpg) 15px center no-repeat; line-height: 26px; height: 26px; color: #838383; padding-left: 25px }
+.dateview span { margin: 0 10px; }
+.dateview span a { color: #099B43; }
+a.readmore{
+	padding: 5px 10px;
+	float:right;
+	margin:20px 0 0 0;
+}
+.weather{
+	background:url(../img/weather_bg.jpg) no-repeat;
+	height:88px;
+	margin:20px 0;
+	padding:20px 0 0 75px;
+}
+.news h3 { font-size: 14px; background: url(../images/r_title_bg.jpg) repeat-x center }
+.news h3 p { background: #fff; width: 70px }
+.news h3 span { color: #65b020 }
+.news h3.ph span { color: #37ccca; }
+.news h3.links span { color: #F17B6B; }
+.news ul { margin-bottom: 20px }
+.news ul li a:hover { text-decoration: underline }
+.rank1 li { height: 25px; line-height: 25px; clear: both; padding-left: 5px; overflow: hidden; padding-left: 15px; background: url(../images/li.jpg) no-repeat left center; }
+.rank1 { margin: 10px 0 }
+.rank1 li a { color: #333; }
+.rank2 { background: url(../images/ph.jpg) no-repeat left 8px; margin: 10px 0 }
+.rank2 li { line-height: 30px; height: 30px; overflow: hidden; padding-left: 24px; border-bottom: #CCC dotted 1px }
+.websites { margin: 10px 0; background: #F3F3F3; border-radius: 50%; text-align: center; }
+.websites li { line-height: 26px; text-shadow: #fff 1px 1px 1px; height: 26px; }
