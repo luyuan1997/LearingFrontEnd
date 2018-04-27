@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		practise of vue
+	</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+	<div id="myApp">
+		<h3>游戏列表</h3>
+		<div v-if="seen">2017年最新发卖</div>
+		<ol>
+			<li v-for="game in games">{{game.title}}/{{game.price}}元</li>
+			<!-- 处理数组循环，将数据循环显示到页面上。 -->
+		</ol>
+		
+	</div>
+	<div id="myApp-2">
+		<p>您最喜欢的游戏是：{{mygame}}</p>
+		<input v-model="mygame">
+		<!-- 为页面输入框进行数据邦定，例如：input，select，textarea，components -->
+	</div>
+	<div id="myApp-3">
+		<p>您最喜欢的游戏是：{{mygame}}</p>
+		<!-- 为页面元素绑定各种事件。（keydown, keyup, click, dbclick, load, etd.） -->
+		<button v-on:click="btnClick('我的世界')">我的世界</button>
+		<button v-on:click="btnClick('勇者斗威龙')">勇者斗恶龙</button>
+		<button v-on:click="btnClick('魔界战记5')">魔界战记5</button>
+		<button v-on:click="btnClick('塞尔达传说')">塞尔达传说</button>
+	</div>
+	<div id="myApp-4">
+		<ol>
+			<!-- component定义页面的局部区域块，完成单独的页面小功能。 -->
+			<game-item v-for="item in games" v-bind:game="item"></game-item>
+		</ol>
+	</div>
+	<div id="myApp-5">
+		<!-- filters格式化变量内容的输出。（日期格式化，字母大小写，数字再计算等等） -->
+		<p>{{message}}</p>
+		<p>{{message | toupper}}</p>
+		<hr>
+		<p>现在的vue.js学习进度是{{num}}({{num | toperentage}})。</p>
+	</div>
+	<div id="myApp-6">
+		今年3月3日发卖的任天堂新一代主机Switch的价格是：{{price}}円，含税价格为：{{priceInTax}}円，折合人民币为：{{priceChinaRMB}}元。
+	</div>
+	<div id="myApp-7">
+		<p>今年3月3日发卖的任天堂新一代主机Switch的价格是：{{price}}円，含税价格为：{{priceInTax}}円，折合人民币为：{{priceChinaRMB}}元。</p>
+    	<button @click="btnClick(10000)">加价10000円</button>
+	</div>
+	<script type="text/javascript">
+		//条件和循环
+		var myApp = new Vue({
+			el:'#myApp',
+			data:{
+				seen:true,//条件判断式，根据表达式的真伪进行页面处理
+				games:[
+					{title:'勇者斗恶龙',price:400},
+					{title:'超级马里奥',price:380},
+					{title:'我的世界',price:99}
+				],
+			},
+		});
+		//处理用户输入
+		var myApp2 = new Vue({
+			el:'#myApp-2',
+			data:{
+				mygame:'超级马里奥'
+			},
+		});
+		//按钮事件
+		var myApp3 = new Vue({
+			el:'#myApp-3',
+			data:{
+				mygame:'超级马里奥'
+			},
+			methods:{
+				btnClick:function(pname){
+					this.mygame = pname;
+				},
+			},
+		});
+		//组件
+		Vue.component('game-item',{
+			props:['game'],
+			template:'<li>{{game.title}}</li>'
+		});
+		var myApp4= new Vue({
+			el:'#myApp-4',
+			data:{
+				games:[
+					{title:'斗地主'},
+					{title:'打麻雀'},
+					{title:'UNO'}
+				]
+			}
+		});
+		//过滤器
+		var myApp5 = new Vue({
+			el:"#myApp-5",
+			data:{
+				message:'Hello vue.js world!',
+				num:0.3
+			},
+			filters:{
+				toupper:function(value){
+					return value.toUpperCase();
+				},
+				toperentage:function(value){
+					return value*100+'%';
+				},
+			},
+		});
+		//计算属性，处理元数据，便于进行二次利用。（比如：消费税自动计算功能）
+		var myApp6 = new Vue({
+			el:'#myApp-6',
+			data:{
+				price:29980
+			},
+			computed:{
+				priceInTax:function(){
+					return this.price*1.08;
+				},
+				priceChinaRMB:function(){
+					return Math.round(this.priceInTax/16.75);
+				},
+			},
+		});
+		// 观察属性$watch与computed属性类似，用于观察变量的变化，然后进行相应的处理。（我从Angular而来）
+		var myApp = new Vue({
+	        el: '#myApp',
+	        data: {
+	            price: 29980,
+	            priceInTax: 0,
+	            priceChinaRMB: 0,
+	        },
+	        watch: {
+	            price: function(newVal, oldVal){
+	                console.log(newVal, oldVal);
+	                this.priceInTax = Math.round(this.price * 1.08);
+	                this.priceChinaRMB = Math.round(this.priceInTax / 16.75);
+	            },
+	        },
+	        methods: {
+	            btnClick: function(newPrice){
+	                this.price += newPrice;
+	            },
+	        },
+	    });
+	</script>
+</body>
+</html>
