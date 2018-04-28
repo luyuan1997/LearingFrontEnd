@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+	<title>Vue学习心得——组件学习</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+	<!-- 组件：局部的组件,Vue.js的组件不仅可以单独声明注册使用，还可以在Vue实例中进行局部注册使用。 -->
+	<div id="myApp-1">
+		<today-weather1></today-weather1>
+		<today-weather2></today-weather2>
+	</div>
+	<!-- 组件：表行组件,为自己的页面表格编写表行组件 -->
+	<div id="myApp-2">
+		<h1>2017年最期待的游戏是：</h1>
+		<table border="1">
+			<tr>
+				<td>编号</td>
+				<td>游戏名称</td>
+			</tr>
+			<my-row1></my-row1>
+			<my-row2></my-row2>
+			<my-row3></my-row3>
+		</table>
+	</div>
+
+
+	<!-- 组件：数据,为Vue.js组件添加数据，使组件可以动态显示各种数据，注意是数据函数，不是数据属性。 -->
+	<div id="myApp-3">
+	    <div>今天的天气是<today-weather/></div>
+	</div>
+
+
+	<!-- 组件：传递数据,制作可接受参数的组件。 -->
+	<div id="myApp-4">
+	    <h1>您的成绩评价</h1>
+	    <test-result :score="50"></test-result>
+	    <test-result :score="65"></test-result>
+	    <test-result :score="90"></test-result>
+	    <test-result :score="100"></test-result>
+	</div>
+	<!-- 组件：传递变量,制作可接受变量参数的组件。 -->
+	<div id="myApp-5">
+	    <div>请输入您的名字：<input v-model="myname"></div>
+	    <hr/>
+	    <say-hello :pname="myname" />
+	</div>
+
+	<!-- 组件：参数验证,	为组件中接受到的变量进行逻辑验证 -->
+	<div id="myApp-6">
+	    <h1>身世之谜</h1>
+	    <show-member-info name="koma" :age="25" :detail="{address:'earth', language:'世界语'}"></show-member-info>
+	</div>
+
+	<!-- 组件：事件传递,v-on侦听组件事件，当组件触发事件后进行事件处理,$emit触发事件，并将数据提交给事件侦听者。 -->
+	<div id="myApp-7">
+	    <h1>人生加法</h1>
+	    <add-method :a="6" :b="12" v-on:add_event="getAddResult"></add-method>
+	    <hr/>
+	    <h3>{{result}}</h3>
+	</div>
+	<!-- 组件：slot插槽,slot是父组件与子组件的通讯方式，可以将父组件的内容显示在子组件当中。 -->
+	<div id="myApp-8">
+	    <say-to pname="koma">
+	        你的视频做的太差了。
+	    </say-to>
+	    <say-to pname="mike">
+	        你千万不要学koma。
+	    </say-to>
+	    <say-to pname="john">
+	        你教教他们两个吧。
+	    </say-to>
+	</div>
+	<!-- 组件：组合slot,在子组件中通过为多个slot进行命名,来接受父组件的不同内容的数据。 -->
+	<div id="myApp-9">
+	    <nba-all-stars c="奥尼尔" pf="加内特">
+	        <span slot="sf">皮尔斯</span>
+	        <span slot="sg">雷阿伦</span>
+	        <span slot="pg">隆多</span>
+	    </nba-all-stars>
+	</div>
+	<script>
+		Vue.component('today-weather1',{
+			template:'<div>今天下雨，出不去啦，打游戏吧！</div>'
+		});
+		var WeatherComponent = {
+			template:'<div>今天下雨，出不去啦，打什么游戏，学习啦！</div>'
+		};
+		var myApp1 = new Vue({
+			el:"#myApp-1",
+			data:{},
+			components:{
+				'today-weather2':WeatherComponent
+			},
+		});
+
+
+
+		Vue.component('my-row1',{
+			template:'<tr><td>(1)</td><td>塞尔达传说：荒野之夜</td></tr>'
+		});
+		Vue.component('my-row2',{
+			template:'<tr><td>(2)</td><td>新马里奥赛车</td></tr>'
+		});
+		Vue.component('my-row3',{
+			template:'<tr><td>(3)</td><td>喷射乌贼娘2代</td></tr>'
+		});
+		var myApp2 = new Vue({
+			el:"#myApp-2",
+			data:{},
+			methods:{}
+		});
+
+
+		Vue.component('today-weather',{
+			template:"<strong>{{todayWeather}}</strong>",
+			data:function(){
+				return{
+					todayWeather:"雨夹雪"
+				};
+			}
+		});
+		var myApp3 = new Vue({
+			el:"#myApp-3"
+		})
+
+
+		Vue.component('test-result', {
+	        props: ['score'],
+	        template: '<div><strong>{{score}}分，{{testResult}}</strong></div>',
+	        computed: {
+	            testResult: function() {
+	                var strResult = "";
+	                if (this.score < 60)
+	                    strResult = "不及格";
+	                else if (this.score < 90)
+	                    strResult = "中等生";
+	                else if (this.score <= 100)
+	                    strResult = "优秀生";
+	                return strResult;
+	            }
+	        }
+	    });
+	    var myApp4 = new Vue({
+	        el: '#myApp-4', 
+	    });
+
+
+	    Vue.component('say-hello', {
+	        props: ['pname'],
+	        template: '<div>你好，<strong>{{pname}}</strong>！</div>',
+	    });
+	    var myApp5 = new Vue({
+	        el: '#myApp-5', 
+	        data: {
+	            myname: 'Koma'
+	        }
+	    });
+
+
+
+
+	    Vue.component('show-member-info', {
+	        props: {
+	            name: {
+	                type: String,
+	                required: true,
+	            },
+	            age: {
+	                type: Number,
+	                validator: function (value) {
+	                    return value >= 0 && value <= 130;
+	                }                
+	            },
+	            detail: {
+	                type: Object,
+	                default: function() {
+	                    return {
+	                        address: 'US',
+	                        language: 'English',
+	                    };
+	                }
+	            },
+	        },
+	        template: '<div>姓名：{{this.name}}<br/>' 
+	            + '年龄：{{this.age}}岁<br/>'
+	            + '地址：{{this.detail.address}}<br/>'
+	            + '语言：{{this.detail.language}} </div>',
+	    });
+	    var myApp6 = new Vue({
+	        el: '#myApp-6', 
+	    });
+
+
+
+	    Vue.component('add-method', {
+	        props: ['a', 'b'],
+	        template: '<div><button v-on:click="add">加吧</button></div>',
+	        methods: {
+	            add: function(){
+	                var value = 0;
+	                value = this.a + this.b;
+	                this.$emit('add_event', {
+	                    result:value
+	                });
+	            }
+	        },
+	    });
+	    var myApp7 = new Vue({
+	        el: '#myApp-7', 
+	        data: {
+	            result: 0
+	        },
+	        methods: {
+	            getAddResult: function(pval){
+	                this.result = pval.result;
+	            }
+	        },
+	    });
+
+
+
+
+	    Vue.component('say-to', {
+	        props: ['pname'],
+	        template: '<div>'
+	            + '你好，<strong>{{pname}}</strong>！'
+	            + '<slot></slot>'
+	            + '</div>',
+	    });
+	    var myApp8 = new Vue({
+	        el: '#myApp-8',
+	    });
+
+
+
+	    Vue.component('nba-all-stars', {
+	        props: ['c', 'pf'],
+	        template: '<div>'
+	            + '<div>中锋：{{c}}</div>'
+	            + '<div>大前：{{pf}}</div>'
+	            + '<div>小前：<slot name="sf"></slot></div>'
+	            + '<div>分卫：<slot name="sg"></slot></div>'
+	            + '<div>控卫：<slot name="pg"></slot></div>'
+	            + '</div>',
+	    });
+	    var myApp9 = new Vue({
+	        el: '#myApp-9',
+	    });
+	</script>
+</body>
+</html>
