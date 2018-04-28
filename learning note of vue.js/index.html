@@ -62,10 +62,131 @@
 	</div>
 	<!-- v-bind:class为html标记绑定样式单class属性 -->
 	<div id="myApp-9">
-		<div v-bind:class="myClass">红色文本1</div>
-		<div :class="myClass">红色文本2</div>
+		<div v-bind:class="myClass" v-show="result">红色文本1</div>
+		<div :class="myClass" v-show="result">红色文本2</div>
 		<button @click="btnClick">改变字体颜色</button>
 		<button @click="btnClick2">改变字体大小</button>
+		<!-- v-show来控制html是否进行显示 -->
+		<button @click="btnClick3">隐藏或者显示</button>
+	</div>
+	<!-- 条件渲染：v-if判断vue.js的变量的值，然后执行页面渲染逻辑 -->
+	<div id="myApp-10">
+		<h1 v-if="result == 0">成绩未公布</h1>
+		<h1 v-else-if="result < 60">{{result}}分 - 考试不及格</h1>
+		<h1 v-else-if="result < 80">{{result}}分 - 还需努力</h1>
+		<h1 v-else>{{result}}分 - 考得不错，继续复习！</h1>
+		<button @click="btnClick">考试成绩</button>
+	</div>
+	<!-- 列表渲染v-for循环数组元素，整理内容显示到页面上 -->
+	<div id="myApp-11">
+		<ul>
+			<li v-for="(game,index) in games">({{index}}){{game.title}} / 售价：{{game.price}} 元</li>
+		</ul>
+	</div>
+	<!-- JS对象迭代，采用v-for循环js对象，把对象内容循环显示到页面上 -->
+	<div id="myApp-12">
+		<h1>Js对象迭代</h1>
+		<div v-for="(value,key) in mygame">{{key}} : {{value}}</div>
+	</div>
+	<!-- 事件处理器通过v-on:(event)实现元素的事件绑定 -->
+	<div id="myApp-13">
+		<h1>事件处理器</h1>
+		<input id="txtName" v-on:keyup="txtKeyup($event)">
+		<button id="btnOk" @click="btnClick($event)"></button>
+	</div>
+	<!-- 表单控件绑定v-model为表单控件元素创建双向数据绑定。（将JS变量的值“快速”设定到控件上，然后将用户输入的内容“快速”设置回JS变量） -->
+	<div id="myApp-14">
+	    <h1>表单控件绑定</h1>
+	    <input type="text" v-model="message" placeholder="来呀，编辑我吧！">
+	    <p>Message is: {{ message }}</p>
+	    <textarea v-model="message" placeholder="加入多行编辑" rows="8" cols="34"></textarea>
+	</div>
+	<!-- 表单复选框v-model,input[type="checkbox"] -->
+	<div id="myApp-15">
+	    <h1>表单复选框</h1>
+	    <input type="checkbox" id="生化危机7" value="生化危机7" v-model="checkedGames">
+	    <label for="生化危机7">生化危机7</label>
+	    <input type="checkbox" id="模拟飞行" value="模拟飞行" v-model="checkedGames">
+	    <label for="模拟飞行">模拟飞行</label>
+	    <input type="checkbox" id="塞尔达传说" value="塞尔达传说" v-model="checkedGames">
+	    <label for="塞尔达传说">塞尔达传说</label>
+	    <br>
+	    <p>您选择的游戏是: {{ checkedGames }}</p>
+	    <h1>表单单选按钮</h1>
+
+	    <h3>选择性别</h3>
+	    <input type="radio" id="male" value="男" v-model="pickedSex">
+	    <label for="male">男</label>
+	    <br>
+	    <input type="radio" id="female" value="女" v-model="pickedSex">
+	    <label for="female">女</label>
+
+	    <h3>选择爱好</h3>
+	    <input type="radio" id="game" value="玩游戏" v-model="pickedHobby">
+	    <label for="game">玩游戏</label>
+	    <br>
+	    <input type="radio" id="movie" value="看电影" v-model="pickedHobby">
+	    <label for="movie">看电影</label>
+
+	    <h3>选择结果</h3>
+	    <p>性别: {{ pickedSex }}</p>
+	    <p>爱好: {{ pickedHobby }}</p>
+	    <h3>你最喜欢的NBA球星是：</h3>
+	    <select v-model="likedNBAStar" style="width:210px;">
+	        <option>科比</option>
+	        <option>詹姆斯</option>
+	        <option>哈登</option>
+	        <option>库里</option>
+	        <option>杜兰特</option>
+	    </select>
+
+	    <h3>我的全明星：</h3>
+	    <select v-model="likedNBAStars" multiple style="width:210px;height:210px;">
+	        <option>阿德托昆博</option>
+	        <option>怀特赛德</option>
+	        <option>阿尔德里奇</option>
+	        <option>戴维斯</option>
+	        <option>格里芬</option>
+	        <option>詹姆斯</option>
+	        <option>杜兰特</option>
+	        <option>巴特勒</option>
+	        <option>德罗赞</option>
+	        <option>哈登</option>
+	        <option>科比</option>
+	        <option>韦德</option>
+	        <option>伦纳德</option>
+	        <option>库里</option>
+	        <option>欧文</option>
+	        <option>保罗</option>
+	        <option>林树豪</option>
+	    </select>
+
+    <h3>选择结果</h3>
+    <p>我最最喜欢: {{ likedNBAStar }}</p>
+    <p>我的全明星: {{ likedNBAStars }}</p>
+	</div>
+	<!-- 表单修饰符,.lazy用户输入内容时不做绑定数据的更新处理，在控件的onchange事件中更新绑定的变量;.number将用户输入的内容转换为数值类型，如果用户输入非数值的时候，则返回NaN;.trim自动去掉用户输入内容两端的空格。 -->
+	<div id="myApp-16">
+	    <h1>用户注册</h1>
+	    
+	    <div>
+	        <label for="username">用户：</label>
+	        <input type="text" id="username" v-model.lazy="username" @change="checkUsername">
+	        <span v-if="checkUsernameOK">可注册</span>
+	    </div>
+	    <div>
+	        <label for="age">年龄：</label>
+	        <input type="number" id="age" v-model.number="age">
+	    </div>
+	    <div>
+	        <label for="content">个人简介：</label><br/>
+	        <textarea id="content" v-model.trim="content" cols="55" rows="8"></textarea>
+	    </div>
+	    
+	    <h4>信息区</h4>
+	    <p>{{username}}</p>
+	    <p>{{age}}</p>
+	    <p><pre>{{content}}</pre></p>
 	</div>
 	<script type="text/javascript">
 		//条件和循环
@@ -193,9 +314,11 @@
 	    var myApp9 = new Vue({
 	    	el:"#myApp-9",
 	    	data:{
+	    		result:true,
 	    		myClass:{
 	    			active:true,
-	    			big:true
+	    			big:true,
+	    			
 	    		},
 	    	},
 	    	methods:{
@@ -204,6 +327,99 @@
 	    		},
 	    		btnClick2:function(){
 	    			this.myClass.big = !this.myClass.big;
+	    		},
+	    		btnClick3:function(){
+	    			this.result = !this.result;
+	    		}
+	    	},
+	    });
+	    var myApp10 = new Vue({
+	    	el:"#myApp-10",
+	    	data:{
+	    		result:0
+	    	},
+	    	methods:{
+	    		btnClick:function(){
+	    			this.result = Math.round(Math.random()*100);
+	    		},
+	    	},
+	    });
+	    var myApp11 = new Vue({
+	    	el:"#myApp-11",
+	    	data:{
+	    		games:[
+	    			{title:"勇者斗恶龙",price:500},
+	    			{title:"酷跑卡丁车",price:500},
+	    			{title:"马里奥世界",price:500}
+	    		]
+	    	},
+	    });
+	    var myApp12 = new Vue({
+	    	el:"#myApp-12",
+	    	data:{
+	    		mygame:{
+	    			title:"乌贼娘2代",
+	    			price:350,
+	    			pubdate:"2007年春季",
+	    			category:"射击",
+	    			agerange:"全年龄"
+	    		},
+	    	},
+	    });
+	    var myApp13 = new Vue({
+	    	el:"#myApp-13",
+	    	data:{},
+	    	methods:{
+	    		txtKeyup:function(event){
+	    			this.debugLog(event);
+	    		},
+	    		btnClick:function(event){
+	    			this.debugLog(event);
+	    		},
+	    		debugLog:function(event){
+	    			console.log(
+	    				event.srcElement.tagName,
+	    				event.srcElement.id,
+	    				event.srcElement.innerHTML,
+	    				event.key?event.key:""
+	    			);
+	    		},
+	    	},
+	    });
+	    var myApp14 = new Vue({
+	    	el:"#myApp-14",
+	    	data:{
+	    		message:"我爱马里奥"
+	    	},
+	    	methods:{
+
+	    	},
+	    });
+	    var myApp15 = new Vue({
+	    	el:"#myApp-15",
+	    	data:{
+	    		checkedGames:[],
+	    		pickedSex:"",
+	    		pickedHobby:"",
+	    		likedNBAStar:null,
+	    		likedNBAStars:[]
+	    	},
+	    	methods:{
+
+	    	},
+	    });
+	    var myApp16 = new Vue({
+	    	el:"#myApp-16",
+	    	data:{
+	    		username:"",
+	    		checkUsernameOK:false,
+	    		age:"",
+	    		content:""
+	    	},
+	    	methods:{
+	    		checkUsername:function(){
+	    			if(this.username.length > 0) this.checkUsernameOK = true;
+	    			else this.checkUsernameOK = false;
 	    		},
 	    	},
 	    });
