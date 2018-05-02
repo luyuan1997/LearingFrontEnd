@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+	<title>私房菜|为你的她每天一道不同的美食</title>
+	<meta http-equiv="content-type" content="text/html charset=utf-8" />
+	<meta name="viewport" content="width=device-width" initial-scale=1.0 />
+	<link rel="stylesheet" href="css/index.css" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/slider.js"></script>
+	<script src="js/clock.js"></script>
+</head>
+<body>
+	<!-- topbar -->
+	<div id="topbar"  class="container">
+		<div>
+			<div class="topbar-left">
+				<span class="foryou">为"她"烹美食</span>
+			</div>
+
+			<div class="topbar-right">
+				<ul class="topbar-level">
+					<li>
+						<a href="#">支持</a>
+						<ul class="sub-menu">
+							<li><a href="#">赞助我</a></li>
+							<li><a href="#">点赞(<span class="numer-support">100</span>)</a></li>
+						</ul>
+					</li>
+					<li><a href="#">E-mail</a></li>
+					<li><a href="#">Log-in</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- wrapper -->
+	<div class="wrapper" class="container">
+		<div class="header">
+			<div id="logo">
+				<nav>
+					<h1>
+						<a href="#">私房菜</a>
+					</h1>
+					<p>用美食表达我们的爱</p>
+				</nav>
+			</div>
+			<div class="clock">
+				<div class="hourHand"></div>
+				<div class="minuteHand"></div>
+				<div class="secondHand"></div>
+				<div class="center"></div>
+				<div class="time"></div>
+				<ul>
+					<li><span>1</span></li>
+					<li><span>2</span></li>
+					<li><span>3</span></li>
+					<li><span>4</span></li>
+					<li><span>5</span></li>
+					<li><span>6</span></li>
+					<li><span>7</span></li>
+					<li><span>8</span></li>
+					<li><span>9</span></li>
+					<li><span>10</span></li>
+					<li><span>11</span></li>
+					<li><span>12</span></li>
+				</ul>
+			</div>
+			<audio src="audio/5[kb]sidestick.aif.mp3" class="audio"></audio>
+
+			<div id="nav">
+				<span><a href="#" target="_blank">主页</a></span>
+				<span><a href="#" target="_blank">菜谱</a></span>
+				<span><a href="#" target="_blank">食材</a></span>
+				<span><a href="#" target="_blank">话题</a></span>
+				<span><a href="#" target="_blank">健康</a></span>
+				<span><a href="#" target="_blank">专题</a></span>
+			</div>
+
+			<div id="slider">
+				<div id="list" style="left:-1000px;">
+					<img src="img/img4.jpg" alt="">
+					<img src="img/img1.jpg" alt="">
+					<img src="img/img2.jpg" alt="">
+					<img src="img/img3.jpg" alt="">
+					<img src="img/img4.jpg" alt="">
+					<img src="img/img1.jpg" alt="">
+				</div>
+				<div id="buttons">
+					<span index="1" class="on"></span>
+					<span index="2"></span>
+					<span index="3"></span>
+					<span index="4"></span>
+				</div>
+				<a href="javascript:;" class="arrow" id="prev">&lt;</a>
+				<a href="javascript:;" class="arrow" id="next">&gt;</a>
+			</div>
+		</div>
+
+		<div class="food-gallery">
+			<h1>唯美食与爱不能辜负</h1>
+			<div class="gallery-filter">
+				<ul class="filters">
+					<li class="xc">湘菜|</li>
+					<li class="cc">川菜|</li>
+					<li class="lc">鲁菜|</li>
+					<li class="hc">徽菜|</li>
+					<li class="mc">闽菜|</li>
+					<li class="sc">苏菜|</li>
+					<li class="zc">浙菜|</li>
+					<li class="yc">粤菜</li>
+				</ul>
+			</div>
+			<div class="search">
+				<form class="bs-example bs-example-form" role="form">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="开启美食搜索之旅">
+						<span class="input-group-addon">寻觅美食</span>
+					</div>
+				</form>
+			</div>
+			<div class="container">
+				<div class="kind-gallery row">
+					<div class="food-kind col-xs-12 col-sm-6 col-md-4 col-lg-3">
+						<p><img src="img/1.jpg" alt=""><span>湘菜</span></p>
+					</div>
+					<div class="food-kind col-xs-12 col-sm-6 col-md-4 col-lg-3">
+						<p><img src="img/2.jpg" alt=""><span>川菜</span></p>
+					</div>
+					<div class="food-kind col-xs-12 col-sm-6 col-md-4 col-lg-3">
+						<p><img src="img/3.jpg" alt=""><span>鲁菜</span></p>
+					</div>
+					<div class="food-kind col-xs-12 col-sm-6 col-md-4 col-lg-3">
+						<p><img src="img/4.jpg" alt=""><span>徽菜</span></p>
+					</div>
+					<div class="food-kind col-xs-12 col-sm-6 col-md-4 col-lg-3">
+						<p><img src="img/5.jpg" alt=""><span>闽菜</span></p>
+					</div>
+					<div class="food-kind col-xs-12 col-sm-6 col-md-4 col-lg-3">
+						<p><img src="img/6.jpg" alt=""><span>苏菜</span></p>
+					</div>
+					<div class="food-kind col-xs-12 col-sm-6 col-md-4 col-lg-3">
+						<p><img src="img/7.jpg" alt=""><span>浙菜</span></p>
+					</div>
+					<div class="food-kind col-xs-12 col-sm-6 col-md-4 col-lg-3">
+						<p><img src="img/8.jpg" alt=""><span>粤菜</span></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<h1>用美食供养我们的爱</h1>
+				<div class="row suggest">
+					<div class="breakfast col-sm-12 col-md-4">
+						<h3>营养早餐</h3>
+						<div class="viewpoint">
+							<figure><img src="img/1.jpg" alt=""></figure>
+							<ul>
+								<p>一周热门</p>
+								<p>根据大家的搜索情况，本周内最受大家喜欢的早餐有...</p>
+							</ul>
+						</div>
+						<div class="viewpoint">
+							<figure><img src="img/2.jpg" alt=""></figure>
+							<ul>
+								<p>人气榜单</p>
+								<p>本周最受欢迎的早餐就是鸡蛋饼了</p>
+							</ul>
+						</div>
+					</div>
+					<div class="lunch col-sm-12 col-md-4">
+						<h3>丰盛午餐</h3>
+						<div class="viewpoint">
+							<figure><img src="img/1.jpg" alt=""></figure>
+							<ul>
+								<p>美食推荐</p>
+								<p>根据大家的搜索情况，本周内最受大家喜欢的早餐有...</p>
+							</ul>
+						</div>
+						<div class="viewpoint">
+							<figure><img src="img/2.jpg" alt=""></figure>
+							<ul>
+								<p>身边美食</p>
+								<p>本周最受欢迎的早餐就是鸡蛋饼了</p>
+							</ul>
+						</div>
+					</div>
+					<div class="lunch col-sm-12 col-md-4">
+						<h3>惬意晚餐</h3>
+						<div class="viewpoint">
+							<figure><img src="img/1.jpg" alt=""></figure>
+							<ul>
+								<p>一周热门</p>
+								<p>根据大家的搜索情况，本周内最受大家喜欢的早餐有...</p>
+							</ul>
+						</div>
+						<div class="viewpoint">
+							<figure><img src="img/2.jpg" alt=""></figure>
+							<ul>
+								<p>人气榜单</p>
+								<p>本周最受欢迎的早餐就是鸡蛋饼了</p>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sign-in">
+				已经有<span><strong style="font-size:30px">十万人</strong></span>在用美食表达<span>爱</span>，你也来吧
+				<a href="#" class="submit">SIGN IN NOW</a>
+			</div>
+			<div id="footer">
+				用美食表达爱意
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
