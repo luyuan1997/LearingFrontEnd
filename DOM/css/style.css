@@ -1,0 +1,71 @@
+/*通用样式*/
+*{padding:0;margin:0;}
+ul, ol{
+	list-style:none;
+}
+a{text-decoration: none;}
+img{border:0;}
+
+/*hot*/
+#hot{
+	height:50px;
+	border-top:1px solid #38f;
+	border-bottom:1px solid #38f;
+	background-color: #f2f2f2; 
+}
+#hot .logo{
+	width:80px;
+	height:50px;
+	float:left;
+	background: url(../images/logo.png) no-repeat -4px center;
+	
+}
+#hot .logo span{
+	color:#38f;
+	/*width:50px;灰色部分无法实现，所以采用的*/
+	width:40px;
+	height:50px;
+	/*line-height: 50px;*/
+	line-height: 18px;
+	padding-top:7px;
+	padding-left:10px;
+	text-align: center;
+	float:right;
+	font-size:14px;
+	font-family: arial, 'Hiragino Sans GB', 'Microsoft Yahei', '宋体';
+}
+#hot .scroll{
+	height:50px;
+	float:left;
+
+}
+#hot .scroll .item{
+	float:left;
+	margin-right: 10px;
+}
+#hot .scroll .item a{
+	width:100%;
+	display:block;
+	height: 100%;
+}
+#hot .scroll .item span{
+	display:block;
+	height:28px;
+	line-height: 28px;
+	padding:0 4px;
+	margin-top:10px;
+	border:1px solid #2c85ff;
+	color:#333;
+	background: #fff;
+}
+#hot .input{
+	height:28px;
+	border-left:1px solid #ccc;
+	margin-top:11px;
+	float: right;
+	padding-left:10px;
+	line-height: 28px;
+}
+#hot .switch{
+
+}
