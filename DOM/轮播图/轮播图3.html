@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<head>
+	<title>轮播图</title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	img{
+		border: 0;
+	}
+	#nav-container{
+		height: 520px;
+		width: 1440px;
+		margin: 50px auto;
+		position: relative;
+	}
+	#imgs img{
+		display: none;
+	}
+	#imgs .selected{
+		display: block;
+	}
+	#nav-text{
+		height: 80px;
+		width: 100%;
+		background: black;
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		opacity: 0.6;
+		color: white;
+		line-height: 80px;
+		filter:alpha(opacity=50);
+	}
+	#nav-text .img-title{
+		float: left;
+		margin-left: 20px;
+	}
+	#nav-list{
+		height: 100%;
+		width: 100px;
+		float: right;
+		line-height: 80px;
+		text-align: center;
+		margin-right: 20px;
+	}
+	#nav-list .prev,#nav-list .next{
+		height: 9px;
+		width: 9px;
+		background: url(images/nav_title_sign.gif) no-repeat;
+		margin-top: 36px;
+		cursor: pointer;
+	}
+	#nav-list .prev{
+		float: left;
+	}
+	#nav-list .next{
+		float: right;
+	}
+	</style>
+</head>
+<body>
+	<div id="nav-container">
+		<div id="imgs">
+			<img src="images/1.jpg" title="111">
+			<img src="images/2.jpg" title="222">
+			<img src="images/3.jpg"  class="selected" title="333">
+			<img src="images/4.jpg" title="444">
+			<img src="images/5.jpg" title="555">
+		</div>
+		<div id="nav-text">
+			<span class="img-title" id="img-t"></span>
+			<div id="nav-list">
+				<span class="prev"></span>
+				<span id="sum-list"></span>
+				/
+				<span id="sum"></span>
+				<span class="next"></span>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var oPrne = document.getElementById("nav-list").getElementsByTagName("span");
+		var oImgs = document.getElementById("imgs");
+		var oImg = oImgs.getElementsByTagName("img");
+		var index=0;
+		var oSum = document.getElementById("sum");
+		var oSumList = document.getElementById("sum-list");
+		var oImgT = document.getElementById("img-t");
+		oSum.innerHTML = oImg.length;
+		oSumList.innerHTML = index+1;
+		oImgT.innerHTML = oImg[0].title;
+		function changeImg(idx){
+			for(var i=0; i<oImg.length; i++){
+				oImg[i].className = "";
+			}
+			oImg[idx].className = "selected";
+			oSum.innerHTML=oImg.length;
+			oSumList.innerHTML=index+1;
+			oImgT.innerHTML = oImg[index].title;
+		}
+		for(var i=0; i<oPrne.length; i++){
+			if(oPrne[i].className =="prev"){
+				oPrne[i].onclick = function(){
+					index--;
+					if(index == -1)
+						index = oImg.length-1;
+					console.log(index);
+					changeImg(index);
+				}
+			}
+			else if(oPrne[i].className == "next"){
+				oPrne[i].onclick = function(){
+					index++;
+					if(index == oImg.length)
+						index =0;
+					changeImg(index);
+				}
+			}
+		}
+	</script>
+</body>
+</html>

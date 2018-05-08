@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+<style>
+	*{
+		padding: 0px;
+		margin: 0px;
+	}
+	ul{
+		list-style: none;
+	}
+	img{
+		border: none;
+	}
+	#nav{
+		height: 520px;
+		width: 1440px;
+		background: red;
+		margin: 20px auto;
+		position: relative;
+	}
+	#nav-list{
+		height: 30px;
+		width: 200px;
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+	}
+	#nav-list li{
+		height: 30px;
+		width: 30px;
+		background: black;
+		float:left;
+		margin-left: 9px;
+		color: white;
+		text-align: center;
+		line-height: 30px;
+		cursor: pointer;
+	}
+	#arrow{
+		height: 30px;
+		width: 100px;
+		position: absolute;
+		left:10px;
+		bottom: 10px;
+	}
+	.arr{
+		float: left;
+		height: 30px;
+		width: 30px;
+		background: black;
+		margin-left: 10px;
+		text-align: center;
+		line-height: 30px;
+		color: white;
+		cursor: pointer;
+	}
+	#imgs img{
+		display: none;
+	}
+	#imgs .selected{
+		display: block;
+	}
+	#nav-list .selected{
+		background: orange;
+	}
+</style>
+</head>
+<body>
+	<div id="nav">
+		<ul id="nav-list">
+			<li class="selected">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<div id="imgs">
+			<img src="images/1.jpg" class="selected">
+			<img src="images/2.jpg">
+			<img src="images/3.jpg">
+			<img src="images/4.jpg">
+			<img src="images/5.jpg">
+		</div>
+		<div id="arrow">
+			<span class="arr" id="prev">&lt;</span>
+			<span class="arr" id="next">&gt;</span>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var oNav=document.getElementById("nav-list");
+		var oLi = oNav.getElementsByTagName("li");
+		var image=document.getElementById("imgs");
+		var picture=image.getElementsByTagName("img");
+		var index=0;
+		for(var i=0;i<oLi.length;i++)
+		{
+			oLi[i].index=i;
+			oLi[i].onmouseover=function(){
+				change(this.index);
+			}
+		}
+		var change = function(index){
+			for(var j=0; j<oLi.length; j++)
+				{
+					oLi[j].className = "";
+					picture[j].className="";
+				}
+					oLi[index].className = "selected";
+					picture[index].className="selected";
+		}
+		var oNext = document.getElementById("next");
+		var oPrev = document.getElementById("prev");
+		oNext.onclick = function(){
+			index++;
+			if(index==oLi.length)
+			{
+				index=0;
+			}
+			change(index);
+		}
+		oPrev.onclick = function(){
+			index--;
+			if(index==-1)
+			{
+				index=oLi.length-1;
+			}
+			change(index);
+		}
+		var timer;
+		function play(){
+			timer = setInterval(
+			function()
+			{
+				oNext.onclick();
+			}
+			,2000);
+		}
+		play();
+		var Ona = document.getElementById("nav");
+		Ona.onmouseover =function(){
+			clearInterval(timer);
+		}
+		Ona.onmouseout=function(){
+			play();
+		}
+	</script>
+</body>
+</html>
