@@ -2,12 +2,22 @@
  * Created by liuyubobobo on 14-4-11.
  * my site: http://www.liuyubobobo.com
  */
+// 屏幕的宽度，主要针对移动端
+documentWidth = window.screen.availWidth;
+//16个格子的外围尺寸
+gridContainerWidth = 0.92*documentWidth;
+// 每个小格子的尺寸
+cellSideLength = 0.18*documentWidth;
+// 格子之间的间隙
+cellSpace = 0.04*documentWidth;
+
+
 function getPosTop( i , j ){
-    return 20 + i*120;
+    return cellSpace + i*(cellSpace+cellSideLength);
 }
 
 function getPosLeft( i , j ){
-    return 20 + j*120;
+    return cellSpace + j*(cellSpace+cellSideLength);
 }
 
 function getNumberBackgroundColor( number ){

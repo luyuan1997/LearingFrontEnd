@@ -6,14 +6,18 @@
 header{
     display:block;
     margin:0 auto;
-    width:500px;
+    /*pc端*/
+    /*width:500px;*/
+    /*移动端*/
+    width:100%;
     text-align:center;
 }
 
 header h1{
     font-family:Arial;
-    font-size:60px;
+    font-size:40px;
     font-weight:bold;
+    margin:10px auto;
 }
 
 header #newgamebutton{
